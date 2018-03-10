@@ -1,8 +1,17 @@
 # d-mediawiki
 
-[Link to MediaWiki container on dockerhub](https://hub.docker.com/r/synctree/mediawiki/)
+This directory contains a Dockerfile that adds a slight tweak 
+to the official MediaWiki docker container. Before launching
+the container, it specifies /var/www/html as a volume, and it 
+copies LocalSettings.php, the MediaWiki config file, into the 
+container.
 
-This container delivers PHP and MediaWiki. MySQL must be run from a different container.
+Use the build script to build the docker container from the 
+Dockerfile.
 
-MySQL is running in the container `stormy_msql` on port 3306. Link the two containers.
+Use the run script to run the docker container.
+The run script expects the MySQL container to be
+called `stormy_mysql` and listening on the standard
+MySQL port 3306.
+
 
