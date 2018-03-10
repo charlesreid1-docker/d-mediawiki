@@ -28,6 +28,7 @@ docker container prune -f
 # eventually this will listen on 8008
 # like the apache reverse proxy on rojo
 docker run \
+    --rm \
     --name stormy_mw \
     --link stormy_mysql:mysql \
     -v stormy_mw_data:/var/www/html \

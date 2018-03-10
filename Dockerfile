@@ -5,6 +5,7 @@ VOLUME ["/var/www/html"]
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/LocalSettings.php /var/www/html/
 COPY charlesreid1-config/root.password.php /var/www/html/
+COPY charlesreid1-config/skins/Bootstrap2 /var/www/html/skins/Bootstrap2
 
 # What about extensions?? 
 # No easy way to do that except a script.
