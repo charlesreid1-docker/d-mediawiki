@@ -31,13 +31,13 @@ There are a few make tasks:
 * `clean` - stop the currently running mysql container
 * `cleanreally` - stop the container and dele the data volume
 
-To stop a running MediaWiki container:
+To stop a running container:
 
 ```
 make clean
 ```
 
-To stop a running MediaWiki container and delete the data volume:
+To stop a running container and delete the data volume:
 
 ```
 make cleanreally
@@ -55,13 +55,13 @@ To create the data volume:
 make disk
 ```
 
-To re-build the MediaWiki container:
+To re-build the container:
 
 ```
 make build
 ```
 
-To run the MediaWiki container:
+To run the container:
 
 ```
 make run
