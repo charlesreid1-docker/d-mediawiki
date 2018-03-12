@@ -31,7 +31,19 @@ There are a few make tasks:
 * `clean` - stop the currently running mysql container
 * `cleanreally` - stop the container and dele the data volume
 
-## submodule
+## Updating Settings
+
+To update LocalSettings.php, skins, or extensions,
+you will need to re-make the Docker container.
+Use the make rules to remake the Docker container:
+
+```
+make clean
+make build
+make run
+```
+
+## Submodule
 
 To clone the repo with the submodule:
 
