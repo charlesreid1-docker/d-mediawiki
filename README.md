@@ -26,10 +26,46 @@ This will run the build and run tasks.
 There are a few make tasks:
 * `build` task - build the MediaWiki docker container
 * `run` task - run the MW docker container
-* `make_disk` - make a docker volume for the MW container
+* `disk` - make a docker volume for the MW container
 * `rm_disk` - remove the docker volume for the MW container
 * `clean` - stop the currently running mysql container
 * `cleanreally` - stop the container and dele the data volume
+
+To stop a running MediaWiki container:
+
+```
+make clean
+```
+
+To stop a running MediaWiki container and delete the data volume:
+
+```
+make cleanreally
+```
+
+To remove the data volume:
+
+```
+make rm_disk
+```
+
+To create the data volume:
+
+```
+make disk
+```
+
+To re-build the MediaWiki container:
+
+```
+make build
+```
+
+To run the MediaWiki container:
+
+```
+make run
+```
 
 ## Updating Settings
 
