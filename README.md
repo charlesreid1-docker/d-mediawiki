@@ -6,18 +6,30 @@ the container, it specifies /var/www/html as a volume, and it
 copies LocalSettings.php, the MediaWiki config file, into the 
 container.
 
-Use the build script to build the docker container from the 
-Dockerfile.
-
 Use the run script to run the docker container.
 The run script expects the MySQL container to be
 called `stormy_mysql` and listening on the standard
 MySQL port 3306.
 
-## hints
+See [d-mysql repo](https://charlesreid1.com:3000/docker/d-mysql).
 
-don't forget - if you are making changes to the files copied into the container,
-either use the `--rm` flag, or remove and create the data volume.
+## Make Tasks
+
+Quick start:
+
+```
+make
+```
+
+This will run the build and run tasks.
+
+There are a few make tasks:
+* `build` task - build the MediaWiki docker container
+* `run` task - run the MW docker container
+* `make_disk` - make a docker volume for the MW container
+* `rm_disk` - remove the docker volume for the MW container
+* `clean` - stop the currently running mysql container
+* `cleanreally` - stop the container and dele the data volume
 
 ## submodule
 
@@ -40,3 +52,5 @@ To fetch changes to the submodule from the submodule's remote:
 ```
 git submodule update --remote
 ```
+
+
