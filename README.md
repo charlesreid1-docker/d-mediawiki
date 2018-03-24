@@ -13,6 +13,10 @@ MySQL port 3306.
 
 See [d-mysql repo](https://charlesreid1.com:3000/docker/d-mysql).
 
+## Docker Compose
+
+To use this container as part of a pod for the charlesreid1.com wiki, see [pod-charlesreid1-wiki](https://charlesreid1.com:3000/docker/pod-charlesreid1-wiki).
+
 ## Make Tasks
 
 Quick start:
