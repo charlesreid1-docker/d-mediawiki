@@ -6,9 +6,8 @@ VOLUME ["/var/www/html"]
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
 COPY charlesreid1-config/mediawiki/root.password.php.example  /var/www/html/
 
-# Dump cotents of root password secret into root.password.php
-RUN /usr/bin/perl -p -e "s/DUMMY/`cat /run/secrets/mysql_root_password`/g" \
-    /var/www/html/root.password.php.example > /var/www/htm/root.password.php
+# Dump contents of root password secret into root.password.php
+RUN sed "s/DUMMY/`echo $MYSQL_PASSWORD`/" /var/www/html/root.password.php.example > /var/www/html/root.password.php
 
 ## Skins
 #COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
