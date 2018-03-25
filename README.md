@@ -2,14 +2,14 @@
 
 This directory contains a Dockerfile that adds a slight tweak 
 to the official MediaWiki docker container. Before launching
-the container, it specifies /var/www/html as a volume, and it 
-copies LocalSettings.php, the MediaWiki config file, into the 
-container.
+the container, it specifies `/var/www/html` as a mounted volume, 
+and it copies `LocalSettings.php`, the MediaWiki config file, 
+from this repo into the container.
 
 Use the run script to run the docker container.
 The run script expects the MySQL container to be
-called `stormy_mysql` and listening on the standard
-MySQL port 3306.
+called `stormy_mysql` and for MySQL to be listening
+on the standard MySQL port, 3306.
 
 See [d-mysql repo](https://charlesreid1.com:3000/docker/d-mysql).
 
