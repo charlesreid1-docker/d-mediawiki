@@ -25,3 +25,6 @@ COPY charlesreid1-config/apache/wiki.conf /etc/apache2/sites-enabled/wiki.conf
 # PHP conf file
 # https://hub.docker.com/_/php/
 #COPY config/php.ini /usr/local/etc/php/
+
+RUN a2enmod rewrite
+RUN service apache2 restart
