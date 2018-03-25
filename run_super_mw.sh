@@ -18,7 +18,7 @@
 # ssl.crt
 # ssl.bundle.crt
 
-MW_SERVER="192.155.84.98"
+MW_SERVER="45.56.87.232"
 HOST_PORT="80"
 
 #docker pull mediawiki
@@ -36,8 +36,8 @@ docker run \
     -e MEDIAWIKI_DB_HOST="mysql" \
     -e MEDIAWIKI_DB_NAME="wikidb" \
     -e MEDIAWIKI_DB_USER="root" \
-    -e MEDIAWIKI_DB_PASSWORD="zeno135" \
-    -d \
+    -e MEDIAWIKI_DB_PASSWORD="`cat ../root.password`" \
+    -i \
     super_mediawiki
 
 #    -e MEDIAWIKI_ENABLE_SSL=true \
