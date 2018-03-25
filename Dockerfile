@@ -6,6 +6,9 @@ VOLUME ["/var/www/html"]
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
 COPY charlesreid1-config/mediawiki/root.password.php  /var/www/html/
 
+# Use sed to replace password placeholder in root.password.php
+# with the mysql password in the container (??)
+
 COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
 
 #COPY charlesreid1-config/mediawiki/extensions/EmbedVideo              /var/www/html/extensions/EmbedVideo
