@@ -4,13 +4,13 @@ VOLUME ["/var/www/html"]
 
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
-COPY charlesreid1-config/mediawiki/root.password.php.example  /var/www/html/
+COPY charlesreid1-config/mediawiki/root.password.php.example  /var/www/html/root.password.php
 
 # Dump contents of root password secret into root.password.php
-RUN sed "s/DUMMY/`echo $MYSQL_PASSWORD`/" /var/www/html/root.password.php.example > /var/www/html/root.password.php
+RUN sed -i "s/DUMMY/`echo $MYSQL_PASSWORD`/" /var/www/html/root.password.php
 
-## Skins
-#COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
+# Skins
+COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
 
 ## Extensions
 #COPY charlesreid1-config/mediawiki/extensions/EmbedVideo              /var/www/html/extensions/EmbedVideo
@@ -18,8 +18,9 @@ RUN sed "s/DUMMY/`echo $MYSQL_PASSWORD`/" /var/www/html/root.password.php.exampl
 #COPY charlesreid1-config/mediawiki/extensions/ParserFunctions         /var/www/html/extensions/ParserFunctions
 #COPY charlesreid1-config/mediawiki/extensions/SyntaxHighlight_GeSHi   /var/www/html/extensions/SyntaxHighlight_GeSHi
 
-RUN chown www-data:www-data /var/www/html/LocalSettings.php
-RUN chown www-data:www-data /var/www/html/root.password.php
+RUN chown -R www-data:www-data /var/www/html/*
+#RUN chown www-data:www-data /var/www/html/LocalSettings.php
+#RUN chown www-data:www-data /var/www/html/root.password.php
 
 RUN chmod 600 /var/www/html/LocalSettings.php
 RUN chmod 600 /var/www/html/root.password.php
