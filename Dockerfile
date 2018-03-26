@@ -7,7 +7,7 @@ COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
 COPY charlesreid1-config/mediawiki/root.password.php.example  /var/www/html/root.password.php
 
 # Dump contents of root password secret into root.password.php
-RUN sed -i "s/DUMMY/`echo $MYSQL_PASSWORD`/" /var/www/html/root.password.php
+RUN sed -i "s/DUMMY/`echo $MEDIAWIKI_DB_PASSWORD`/" /var/www/html/root.password.php
 
 # Skins
 COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
