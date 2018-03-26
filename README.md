@@ -19,6 +19,16 @@ To use this container as part of a pod for the charlesreid1.com wiki, see [pod-c
 
 To use the container standalone, keep reading.
 
+## Troubleshooting
+
+If you are seeing 404s on every page you try, it may be because 
+your MediaWiki config file is set to redirect you to `/wiki/Main_Page`
+but your web server is not set up to handle it.
+
+See [this lin](https://www.mediawiki.org/wiki/Manual:Short_URL)
+and the guide for [apache](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Short_URL/Apache)
+and [nginx](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Short_URL/Nginx).
+
 ## Make Tasks
 
 Quick start:
