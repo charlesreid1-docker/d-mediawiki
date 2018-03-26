@@ -4,7 +4,6 @@ VOLUME ["/var/www/html"]
 
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
-COPY charlesreid1-config/mediawiki/root.password.php.example  /var/www/html/root.password.php
 
 # Skins
 COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootstrap2
@@ -17,10 +16,8 @@ COPY charlesreid1-config/mediawiki/skins/Bootstrap2   /var/www/html/skins/Bootst
 
 RUN chown -R www-data:www-data /var/www/html/*
 #RUN chown www-data:www-data /var/www/html/LocalSettings.php
-#RUN chown www-data:www-data /var/www/html/root.password.php
 
 RUN chmod 600 /var/www/html/LocalSettings.php
-RUN chmod 600 /var/www/html/root.password.php
 
 # Apache conf file
 COPY charlesreid1-config/apache/wiki.conf /etc/apache2/sites-enabled/wiki.conf
