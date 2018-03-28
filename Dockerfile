@@ -4,9 +4,7 @@ VOLUME ["/var/www/html"]
 
 # Install ImageMagick
 RUN apt-get update && \
-    apt-get install -y imagemagick && \
-    apt-get install -y mediawiki-math && \
-    apt-get install -y mediawiki-math-texvc
+    apt-get install -y imagemagick 
 
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
