@@ -1,5 +1,7 @@
 FROM mediawiki
 
+EXPOSE 8989
+
 VOLUME ["/var/www/html"]
 
 # Install ImageMagick
@@ -25,6 +27,7 @@ RUN chmod 600 /var/www/html/LocalSettings.php
 
 # Apache conf file
 COPY charlesreid1-config/apache/wiki.conf /etc/apache2/sites-enabled/wiki.conf
+COPY charlesreid1-config/apache/ports.conf /etc/apache2/ports.conf
 RUN a2enmod rewrite
 RUN service apache2 restart
 
