@@ -7,9 +7,16 @@ VOLUME ["/var/www/html"]
 # Install ImageMagick
 # and math stuff mentioned by Math extension readme
 RUN apt-get update && \
-    apt-get install -y imagemagick && \
-    apt-get install -y build-essential dvipng ocaml \
-            texlive-fonts-recommended texlive-lang-greek texlive-latex-recommended
+    apt-get install -y build-essential \
+            dvipng \
+            ocaml \
+            ghostscript \
+            imagemagick \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-greek \
+            texlive-latex-recommended
 
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
