@@ -5,8 +5,11 @@ EXPOSE 8989
 VOLUME ["/var/www/html"]
 
 # Install ImageMagick
+# and math stuff mentioned by Math extension readme
 RUN apt-get update && \
-    apt-get install -y imagemagick 
+    apt-get install -y imagemagick && \
+    apt-get install -y build-essential dvipng ocaml \
+            texlive-fonts-recommended texlive-lang-greek texlive-latex-recommended
 
 # Copy skins, config files, and other particulars into container
 COPY charlesreid1-config/mediawiki/LocalSettings.php  /var/www/html/
@@ -34,4 +37,7 @@ RUN service apache2 restart
 # PHP conf file
 # https://hub.docker.com/_/php/
 #COPY config/php.ini /usr/local/etc/php/
+
+# make texvc
+CMD cd /var/www/html/extensions/Math/math && make && apache2-foreground
 
