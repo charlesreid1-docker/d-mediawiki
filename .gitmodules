@@ -1,3 +1,3 @@
 [submodule "charlesreid1-config"]
 	path = charlesreid1-config
-	url = https://charlesreid1.com:3000/wiki/charlesreid1-config.git
+	url = https://git.charlesreid1.com/wiki/charlesreid1-config.git
