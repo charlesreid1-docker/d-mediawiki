@@ -20,8 +20,36 @@ RUN apt-get update && \
 
 # Copy skins, config files, and other particulars into container
 
+# This is the most phenomenally stupid clash of idiocy I have ever encountered
+# in my entire *nix career. MediaWiki needs everything, everything, to be in one folder.
+# Docker is totally incapable of mounting a file in a volume.
+# I cannot update LocalSettings.php without clearing the cache
+# I cannot clear the cache without reinstalling all of latex
+# SO STUPID
+# I can't bind-mount the skins dir, because then it's owned by root
+# I can't fix the fact that all bind-mounted dirs are owned by root, because I can only add commands in THIS DOCKERFILE
+# and when you run the commands in this dockerfile, YOU CANNOT SEE THE BIND-MOUNTED STUFF
+#
+#
+#
+# WHAT THE HELL MAN
+#
+#
+#
+# DOCKER
+
+# IS
+
+# SO
+
+# STUPID
+
+
+
+
 # Skins
 COPY charlesreid1-config/mediawiki/skins /var/www/html/skins
+RUN chown -R www-data:www-data /var/www/html/skins
 
 # Settings
 COPY charlesreid1-config/mediawiki/LocalSettings.php /var/www/html/LocalSettings.php
@@ -33,12 +61,10 @@ COPY charlesreid1-config/mediawiki/extensions/EmbedVideo              /var/www/h
 COPY charlesreid1-config/mediawiki/extensions/Math                    /var/www/html/extensions/Math
 COPY charlesreid1-config/mediawiki/extensions/ParserFunctions         /var/www/html/extensions/ParserFunctions
 COPY charlesreid1-config/mediawiki/extensions/SyntaxHighlight_GeSHi   /var/www/html/extensions/SyntaxHighlight_GeSHi
-
 RUN chown -R www-data:www-data /var/www/html/*
 
 # Apache conf file
-COPY charlesreid1-config/apache/wiki.conf /etc/apache2/sites-enabled/wiki.conf
-COPY charlesreid1-config/apache/ports.conf /etc/apache2/ports.conf
+COPY charlesreid1-config/apache/*.conf /etc/apache2/sites-enabled/
 RUN a2enmod rewrite
 RUN service apache2 restart
 
