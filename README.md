@@ -11,8 +11,8 @@ You should not run this container by itself (see
 
 ## Summary
 
-This directory contains a Dockerfile that adds a slight tweak 
-to the official MediaWiki docker container. Before launching
+This directory contains a Dockerfile that modifies the 
+official MediaWiki docker container. Before launching
 the container, it specifies `/var/www/html` as a mounted volume, 
 and it copies `LocalSettings.php`, the MediaWiki config file, 
 from this repo into the container.
