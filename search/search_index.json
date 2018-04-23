@@ -1,0 +1,39 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "d-mediawiki\n\n\nThis directory contains a Dockerfile that adds a slight tweak \nto the official MediaWiki docker container. Before launching\nthe container, it specifies \n/var/www/html\n as a mounted volume, \nand it copies \nLocalSettings.php\n, the MediaWiki config file, \nfrom this repo into the container.\n\n\nUse the run script to run the docker container.\nThe run script expects the MySQL container to be\ncalled \nstormy_mysql\n and for MySQL to be listening\non the standard MySQL port, 3306.\n\n\nSee \nd-mysql repo\n.\n\n\nDocker Compose\n\n\nTo use this container as part of a pod for the charlesreid1.com wiki, see \npod-charlesreid1-wiki\n.\n\n\nTo use the container standalone, keep reading.\n\n\nTroubleshooting\n\n\nIf you are seeing 404s on every page you try, it may be because \nyour MediaWiki config file is set to redirect you to \n/wiki/Main_Page\n\nbut your web server is not set up to handle it.\n\n\nSee \nthis lin\n\nand the guide for \napache\n\nand \nnginx\n.\n\n\nMake Tasks\n\n\nQuick start:\n\n\nmake\n\n\n\n\nThis will run the build and run tasks.\n\n\nThere are a few make tasks:\n\n \nbuild\n task - build the MediaWiki docker container\n\n \nrun\n task - run the MW docker container\n\n \ndisk\n - make a docker volume for the MW container\n\n \nrm_disk\n - remove the docker volume for the MW container\n\n \nclean\n - stop the currently running mysql container\n\n \ncleanreally\n - stop the container and dele the data volume\n\n\nTo stop a running container:\n\n\nmake clean\n\n\n\n\nTo stop a running container and delete the data volume:\n\n\nmake cleanreally\n\n\n\n\nTo remove the data volume:\n\n\nmake rm_disk\n\n\n\n\nTo create the data volume:\n\n\nmake disk\n\n\n\n\nTo re-build the container:\n\n\nmake build\n\n\n\n\nTo run the container:\n\n\nmake run\n\n\n\n\nUpdating Settings\n\n\nTo update LocalSettings.php, skins, or extensions,\nyou will need to re-make the Docker container.\nUse the make rules to remake the Docker container:\n\n\nmake clean\nmake build\nmake run\n\n\n\n\nSubmodule\n\n\nTo clone the repo with the submodule:\n\n\ngit clone --recursive https://charlesreid1.com:3000/docker/d-mediawiki.git\n\n\n\n\nTo check out the submodule after a shallow clone:\n\n\ngit submodule init\n# or \ngit submodule update --init \n\n\n\n\nTo fetch changes to the submodule from the submodule's remote:\n\n\ngit submodule update --remote",
+            "title": "Home"
+        },
+        {
+            "location": "/#d-mediawiki",
+            "text": "This directory contains a Dockerfile that adds a slight tweak \nto the official MediaWiki docker container. Before launching\nthe container, it specifies  /var/www/html  as a mounted volume, \nand it copies  LocalSettings.php , the MediaWiki config file, \nfrom this repo into the container.  Use the run script to run the docker container.\nThe run script expects the MySQL container to be\ncalled  stormy_mysql  and for MySQL to be listening\non the standard MySQL port, 3306.  See  d-mysql repo .",
+            "title": "d-mediawiki"
+        },
+        {
+            "location": "/#docker-compose",
+            "text": "To use this container as part of a pod for the charlesreid1.com wiki, see  pod-charlesreid1-wiki .  To use the container standalone, keep reading.",
+            "title": "Docker Compose"
+        },
+        {
+            "location": "/#troubleshooting",
+            "text": "If you are seeing 404s on every page you try, it may be because \nyour MediaWiki config file is set to redirect you to  /wiki/Main_Page \nbut your web server is not set up to handle it.  See  this lin \nand the guide for  apache \nand  nginx .",
+            "title": "Troubleshooting"
+        },
+        {
+            "location": "/#make-tasks",
+            "text": "Quick start:  make  This will run the build and run tasks.  There are a few make tasks:   build  task - build the MediaWiki docker container   run  task - run the MW docker container   disk  - make a docker volume for the MW container   rm_disk  - remove the docker volume for the MW container   clean  - stop the currently running mysql container   cleanreally  - stop the container and dele the data volume  To stop a running container:  make clean  To stop a running container and delete the data volume:  make cleanreally  To remove the data volume:  make rm_disk  To create the data volume:  make disk  To re-build the container:  make build  To run the container:  make run",
+            "title": "Make Tasks"
+        },
+        {
+            "location": "/#updating-settings",
+            "text": "To update LocalSettings.php, skins, or extensions,\nyou will need to re-make the Docker container.\nUse the make rules to remake the Docker container:  make clean\nmake build\nmake run",
+            "title": "Updating Settings"
+        },
+        {
+            "location": "/#submodule",
+            "text": "To clone the repo with the submodule:  git clone --recursive https://charlesreid1.com:3000/docker/d-mediawiki.git  To check out the submodule after a shallow clone:  git submodule init\n# or \ngit submodule update --init   To fetch changes to the submodule from the submodule's remote:  git submodule update --remote",
+            "title": "Submodule"
+        }
+    ]
+}
