@@ -6,8 +6,18 @@ MediaWiki on [charlesreid1.com/wiki](https://charlesreid1.com/wiki).
 This container also runs an Apache web server and 
 a PHP engine.
 
+[documentation: d-mediawiki container](https://pages.charlesreid1.com/d-mediawiki/) (you are here)
+
+[source code on git.charlesreid1.com: d-mediawiki](https://git.charlesreid1.com/docker/d-mediawiki)
+
+[source code on github.com: charlesreid1-docker/d-mediawiki](https://github.com/charlesreid1-docker/d-mediawiki)
+
+
+## Quick Note on Usage
+
 You should not run this container by itself (see 
 [pod-charlesreid1](https://git.charlesreid1.com/docker/pod-charlesreid1.git)). 
+
 
 ## Summary
 
@@ -25,7 +35,7 @@ for a working pod using this container.
 ## Docker Compose
 
 To use this container as part of a pod, as with the charlesreid1.com wiki, 
-see [pod-charlesreid1-wiki](https://charlesreid1.com:3000/docker/pod-charlesreid1-wiki).
+see [pod-charlesreid1-wiki](https://git.charlesreid1.com/docker/pod-charlesreid1-wiki).
 
 ## Troubleshooting
 
