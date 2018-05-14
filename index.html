@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -234,6 +235,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-note-on-usage" title="Quick Note on Usage" class="md-nav__link">
+    Quick Note on Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" title="Summary" class="md-nav__link">
     Summary
   </a>
@@ -300,6 +308,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-note-on-usage" title="Quick Note on Usage" class="md-nav__link">
+    Quick Note on Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" title="Summary" class="md-nav__link">
     Summary
   </a>
@@ -356,6 +371,10 @@
 MediaWiki on <a href="https://charlesreid1.com/wiki">charlesreid1.com/wiki</a>.</p>
 <p>This container also runs an Apache web server and 
 a PHP engine.</p>
+<p><a href="https://pages.charlesreid1.com/d-mediawiki/">documentation: d-mediawiki container</a> (you are here)</p>
+<p><a href="https://git.charlesreid1.com/docker/d-mediawiki">source code on git.charlesreid1.com: d-mediawiki</a></p>
+<p><a href="https://github.com/charlesreid1-docker/d-mediawiki">source code on github.com: charlesreid1-docker/d-mediawiki</a></p>
+<h2 id="quick-note-on-usage">Quick Note on Usage<a class="headerlink" href="#quick-note-on-usage" title="Permanent link">&para;</a></h2>
 <p>You should not run this container by itself (see 
 <a href="https://git.charlesreid1.com/docker/pod-charlesreid1.git">pod-charlesreid1</a>). </p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
@@ -369,7 +388,7 @@ from this repo into the container.</p>
 for a working pod using this container.</p>
 <h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
 <p>To use this container as part of a pod, as with the charlesreid1.com wiki, 
-see <a href="https://charlesreid1.com:3000/docker/pod-charlesreid1-wiki">pod-charlesreid1-wiki</a>.</p>
+see <a href="https://git.charlesreid1.com/docker/pod-charlesreid1-wiki">pod-charlesreid1-wiki</a>.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If you are seeing 404s on every page you try, it may be because 
 your MediaWiki config file is set to redirect you to <code>/wiki/Main_Page</code>
@@ -436,7 +455,7 @@ git submodule update --init
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 <a href="https://charlesreid1.com">Charles Reid</a>
+            Copyright &copy; 2018 <a href="https://charlesreid1.com">Charles Reid</a>, released under the <a href="https://opensource.org/licenses/MIT">MIT license</a>
           </div>
         
         powered by
