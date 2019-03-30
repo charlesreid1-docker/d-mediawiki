@@ -1,20 +1,13 @@
 #!/bin/bash
 # 
-# fix LocalSettings.php in the mediawiki container,
-# because docker is a big fat idiot.
-#
-# because docker is so idiotic and pedantic,
-# that you can't mount a file in a volume,
-# and we can't seem to figure out 
-# how to get this thing to rebuild the 
-# Dockerfile without caching LocalSettings.php
-# and also not installing the entirety of 
-# LaTeX, which is just frustratingly stupid,
-# and could be bypassed by creating two 
-# Dockerfiles, but why the hell do I have to
-# even think about this, this is so stupid,
-# just let me bind-mount my stinking file
-# in my stinking volume you stinking program.
+# fix LocalSettings.php in the mediawiki container.
+# 
+# docker is stupid, so it doesn't let you bind mount
+# a single file into a docker volume.
+# 
+# so, rather than rebuilding the entire goddamn container
+# just to update LocalSettings.php when it changes, we just
+# use a docker cp command to copy it into the container.
 
 NAME="podcharlesreid1_stormy_mw_1"
 echo "Installing LocalSettings.php into $NAME"
