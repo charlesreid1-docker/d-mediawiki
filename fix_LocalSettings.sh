@@ -28,6 +28,7 @@ for file in $FILES
 do
     echo "Fixing permissions on $dir"
     docker exec -it $NAME /bin/bash -c "chown -R www-data:www-data $dir"
+    docker exec -it $NAME /bin/bash -c "chmod 755 $dir"
     docker exec -it $NAME /bin/bash -c "chmod -R 755 $dir"
     echo "Finished fixing permissions on $dir"
 done
