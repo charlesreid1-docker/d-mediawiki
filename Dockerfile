@@ -31,7 +31,12 @@ RUN apt-get update && \
 # and when you run the commands in this dockerfile, 
 # YOU CANNOT SEE THE BIND-MOUNTED STUFF.
 
-
+# Extensions
+COPY charlesreid1-config/mediawiki/extensions/EmbedVideo              /var/www/html/extensions/EmbedVideo
+COPY charlesreid1-config/mediawiki/extensions/Math                    /var/www/html/extensions/Math
+COPY charlesreid1-config/mediawiki/extensions/ParserFunctions         /var/www/html/extensions/ParserFunctions
+COPY charlesreid1-config/mediawiki/extensions/SyntaxHighlight_GeSHi   /var/www/html/extensions/SyntaxHighlight_GeSHi
+RUN chown -R www-data:www-data /var/www/html/*
 
 # Skins
 COPY charlesreid1-config/mediawiki/skins /var/www/html/skins
@@ -39,15 +44,8 @@ RUN chown -R www-data:www-data /var/www/html/skins
 
 # Settings
 COPY charlesreid1-config/mediawiki/LocalSettings.php /var/www/html/LocalSettings.php
-RUN chown www-data:www-data /var/www/html/LocalSettings.php
+RUN chown -R www-data:www-data /var/www/html/LocalSettings*
 RUN chmod 600 /var/www/html/LocalSettings.php
-
-# Extensions
-COPY charlesreid1-config/mediawiki/extensions/EmbedVideo              /var/www/html/extensions/EmbedVideo
-COPY charlesreid1-config/mediawiki/extensions/Math                    /var/www/html/extensions/Math
-COPY charlesreid1-config/mediawiki/extensions/ParserFunctions         /var/www/html/extensions/ParserFunctions
-COPY charlesreid1-config/mediawiki/extensions/SyntaxHighlight_GeSHi   /var/www/html/extensions/SyntaxHighlight_GeSHi
-RUN chown -R www-data:www-data /var/www/html/*
 
 # Apache conf file
 COPY charlesreid1-config/apache/*.conf /etc/apache2/sites-enabled/
@@ -60,4 +58,3 @@ RUN service apache2 restart
 
 # make texvc
 CMD cd /var/www/html/extensions/Math/math && make && apache2-foreground
-
