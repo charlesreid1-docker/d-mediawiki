@@ -16,7 +16,7 @@ docker exec -it $NAME /bin/bash -c "chown www-data:www-data /var/www/html/LocalS
 docker exec -it $NAME /bin/bash -c "chmod 600 /var/www/html/LocalSettings.php"
 echo "Finished installing LocalSettings.php into $NAME"
 
-FILES="/var/www/html/docs
+DIRS="/var/www/html/docs
 /var/www/html/includes
 /var/www/html/languages
 /var/www/html/maintenance
@@ -24,7 +24,7 @@ FILES="/var/www/html/docs
 /var/www/html/tests
 /var/www/html/vendor"
 
-for file in $FILES
+for dir in $DIRS
 do
     echo "Fixing permissions on $dir"
     docker exec -it $NAME /bin/bash -c "chown -R www-data:www-data $dir"
