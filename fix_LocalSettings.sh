@@ -26,9 +26,9 @@ FILES="/var/www/html/docs
 
 for file in $FILES
 do
-    echo "Installing $file into $NAME"
-    docker exec -it $NAME /bin/bash -c "chown www-data:www-data $file"
-    docker exec -it $NAME /bin/bash -c "chmod 600 $file"
-    echo "Finished installing $file into $NAME"
+    echo "Fixing permissions on $dir"
+    docker exec -it $NAME /bin/bash -c "chown www-data:www-data $dir"
+    docker exec -it $NAME /bin/bash -c "chmod 755 $dir"
+    echo "Finished fixing permissions on $dir"
 done
 
