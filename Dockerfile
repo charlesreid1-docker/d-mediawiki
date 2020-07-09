@@ -48,7 +48,7 @@ RUN chown -R www-data:www-data /var/www/html/LocalSettings*
 RUN chmod 600 /var/www/html/LocalSettings.php
 
 # MediaWiki Fail2ban log directory
-CMD mkdir -p /var/log/mwf2b
+RUN mkdir -p /var/log/mwf2b
 RUN chown -R www-data:www-data /var/log/mwf2b
 RUN chmod 700 /var/log/mwf2b
 
