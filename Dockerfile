@@ -61,5 +61,6 @@ RUN service apache2 restart
 # https://hub.docker.com/_/php/
 #COPY config/php.ini /usr/local/etc/php/
 
-# make texvc
-CMD cd /var/www/html/extensions/Math/math && make && apache2-foreground
+## make texvc
+#CMD cd /var/www/html/extensions/Math && make && apache2-foreground
+CMD apache2-foreground
