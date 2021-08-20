@@ -9,7 +9,7 @@
 # just to update LocalSettings.php when it changes, we just
 # use a docker cp command to copy it into the container.
 
-NAME="pod-charlesreid1_stormy_mw_1"
+NAME="stormy_mw"
 echo "Installing LocalSettings.php into $NAME"
 docker cp charlesreid1-config/mediawiki/LocalSettings.php $NAME:/var/www/html/LocalSettings.php
 docker exec -it $NAME /bin/bash -c "chown www-data:www-data /var/www/html/LocalSettings.php"
