@@ -57,10 +57,6 @@ COPY charlesreid1-config/apache/*.conf /etc/apache2/sites-enabled/
 RUN a2enmod rewrite
 RUN service apache2 restart
 
-# PHP conf file
-# https://hub.docker.com/_/php/
-#COPY config/php.ini /usr/local/etc/php/
-
 ## make texvc
 #CMD cd /var/www/html/extensions/Math && make && apache2-foreground
 CMD apache2-foreground
