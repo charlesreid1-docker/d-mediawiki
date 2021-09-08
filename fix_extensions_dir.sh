@@ -9,7 +9,7 @@
 # ourselves.
 set -e
 
-NAME="pod-charlesreid1_stormy_mw_1"
+NAME="stormy_mw"
 EXTENSIONS="SyntaxHighlight_GeSHi ParserFunctions EmbedVideo Math Fail2banlog"
 
 echo "Replacing existing versions of MediaWiki extensions..."

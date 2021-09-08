@@ -9,7 +9,7 @@
 # just to update the skin when it changes, we just
 # use a docker cp command to copy it into the container.
 
-NAME="pod-charlesreid1_stormy_mw_1"
+NAME="stormy_mw"
 echo "Installing skins into $NAME"
 docker exec -it $NAME /bin/bash -c 'rm -rf /var/www/html/skins'
 docker cp charlesreid1-config/mediawiki/skins $NAME:/var/www/html/skins
